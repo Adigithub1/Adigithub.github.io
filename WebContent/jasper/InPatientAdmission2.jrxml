@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="InPatientAdmission" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="68ec5eab-7bc9-4d19-a34a-cc493411bf18">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id" class="java.lang.String">
+        <parameterDescription><![CDATA[]]></parameterDescription>
+    </parameter>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     inpatient.`id` AS inpatient_id,
+     inpatient.`admisssioncharge` AS inpatient_admisssioncharge,
+     inpatient.`admitdateortime` AS inpatient_admitdateortime,
+     inpatient.`advanceinwords` AS inpatient_advanceinwords,
+     inpatient.`advancepaid` AS inpatient_advancepaid,
+     inpatient.`allotedby` AS inpatient_allotedby,
+     inpatient.`bedno` AS inpatient_bedno,
+     inpatient.`concession` AS inpatient_concession,
+     inpatient.`consultantdoctor` AS inpatient_consultantdoctor,
+     inpatient.`dateofadvance` AS inpatient_dateofadvance,
+     inpatient.`diet` AS inpatient_diet,
+     inpatient.`medicalrecordscharge` AS inpatient_medicalrecordscharge,
+     inpatient.`modeofpayment` AS inpatient_modeofpayment,
+     inpatient.`modeofpayment1` AS inpatient_modeofpayment1,
+     inpatient.`patientmrno` AS inpatient_patientmrno,
+     inpatient.`patientname` AS inpatient_patientname,
+     inpatient.`regdate` AS inpatient_regdate,
+     inpatient.`roomno` AS inpatient_roomno,
+     inpatient.`roomrent` AS inpatient_roomrent,
+     inpatient.`patientno` AS inpatient_patientno,
+     hospitaldetail.`hostId` AS hospitaldetail_hostId,
+     hospitaldetail.`NumBeds` AS hospitaldetail_NumBeds,
+     hospitaldetail.`admin` AS hospitaldetail_admin,
+     hospitaldetail.`city` AS hospitaldetail_city,
+     hospitaldetail.`contactPerson` AS hospitaldetail_contactPerson,
+     hospitaldetail.`contactPhNum` AS hospitaldetail_contactPhNum,
+     hospitaldetail.`country` AS hospitaldetail_country,
+     hospitaldetail.`director` AS hospitaldetail_director,
+     hospitaldetail.`email` AS hospitaldetail_email,
+     hospitaldetail.`establish` AS hospitaldetail_establish,
+     hospitaldetail.`fax` AS hospitaldetail_fax,
+     hospitaldetail.`hosptName` AS hospitaldetail_hosptName,
+     hospitaldetail.`hostNum` AS hospitaldetail_hostNum,
+     hospitaldetail.`phNum1` AS hospitaldetail_phNum1,
+     hospitaldetail.`phNum2` AS hospitaldetail_phNum2,
+     hospitaldetail.`phNum3` AS hospitaldetail_phNum3,
+     hospitaldetail.`phNum4` AS hospitaldetail_phNum4,
+     hospitaldetail.`pincode` AS hospitaldetail_pincode,
+     hospitaldetail.`regFee` AS hospitaldetail_regFee,
+     hospitaldetail.`state` AS hospitaldetail_state,
+     hospitaldetail.`address1` AS hospitaldetail_address1,
+     hospitaldetail.`address2` AS hospitaldetail_address2
+FROM
+      `hospitaldetail` hospitaldetail,
+     `inpatient` inpatient
+WHERE
+     inpatient.id = '$P!{id}']]>
+	</queryString>
+	<field name="inpatient_id" class="java.lang.Integer"/>
+	<field name="inpatient_admisssioncharge" class="java.lang.Integer"/>
+	<field name="inpatient_admitdateortime" class="java.lang.String"/>
+	<field name="inpatient_advanceinwords" class="java.lang.String"/>
+	<field name="inpatient_advancepaid" class="java.lang.Integer"/>
+	<field name="inpatient_allotedby" class="java.lang.String"/>
+	<field name="inpatient_bedno" class="java.lang.String"/>
+	<field name="inpatient_concession" class="java.lang.Float"/>
+	<field name="inpatient_consultantdoctor" class="java.lang.String"/>
+	<field name="inpatient_dateofadvance" class="java.lang.String"/>
+	<field name="inpatient_diet" class="java.lang.String"/>
+	<field name="inpatient_medicalrecordscharge" class="java.lang.Integer"/>
+	<field name="inpatient_modeofpayment" class="java.lang.String"/>
+	<field name="inpatient_modeofpayment1" class="java.lang.String"/>
+	<field name="inpatient_patientmrno" class="java.lang.String"/>
+	<field name="inpatient_patientname" class="java.lang.String"/>
+	<field name="inpatient_regdate" class="java.lang.String"/>
+	<field name="inpatient_roomno" class="java.lang.String"/>
+	<field name="inpatient_roomrent" class="java.lang.String"/>
+	<field name="inpatient_patientno" class="java.lang.String"/>
+	<field name="hospitaldetail_hostId" class="java.lang.Integer"/>
+	<field name="hospitaldetail_NumBeds" class="java.lang.String"/>
+	<field name="hospitaldetail_admin" class="java.lang.String"/>
+	<field name="hospitaldetail_city" class="java.lang.String"/>
+	<field name="hospitaldetail_contactPerson" class="java.lang.String"/>
+	<field name="hospitaldetail_contactPhNum" class="java.lang.String"/>
+	<field name="hospitaldetail_country" class="java.lang.String"/>
+	<field name="hospitaldetail_director" class="java.lang.String"/>
+	<field name="hospitaldetail_email" class="java.lang.String"/>
+	<field name="hospitaldetail_establish" class="java.lang.Integer"/>
+	<field name="hospitaldetail_fax" class="java.lang.String"/>
+	<field name="hospitaldetail_hosptName" class="java.lang.String"/>
+	<field name="hospitaldetail_hostNum" class="java.lang.Integer"/>
+	<field name="hospitaldetail_phNum1" class="java.lang.String"/>
+	<field name="hospitaldetail_phNum2" class="java.lang.String"/>
+	<field name="hospitaldetail_phNum3" class="java.lang.String"/>
+	<field name="hospitaldetail_phNum4" class="java.lang.String"/>
+	<field name="hospitaldetail_pincode" class="java.lang.String"/>
+	<field name="hospitaldetail_regFee" class="java.lang.Double"/>
+	<field name="hospitaldetail_state" class="java.lang.String"/>
+	<field name="hospitaldetail_address1" class="java.lang.String"/>
+	<field name="hospitaldetail_address2" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="85" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="554" height="18" uuid="94bb8e95-83bf-4312-ad80-60180fd24522"/>
+				<textElement textAlignment="Center" markup="none">
+					<font fontName="Book Antiqua" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hospitaldetail_hosptName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="19" width="555" height="16" uuid="e8044c69-de02-4a7c-a04f-6eff4fa91198"/>
+				<textElement textAlignment="Center" markup="none">
+					<font fontName="Book Antiqua" size="12"/>
+				</textElement>
+				<text><![CDATA[Multi Speciality Hospital]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="36" width="555" height="13" uuid="1071f4bd-d0bd-467f-bee3-f2b4c0bc24bb"/>
+				<textElement textAlignment="Center" markup="none">
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hospitaldetail_address1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="52" width="555" height="13" uuid="07e68daf-aab9-475e-9866-5c600c18ed11"/>
+				<textElement textAlignment="Center" markup="none">
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hospitaldetail_city}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="229" y="65" width="55" height="13" uuid="7a3e4c8d-d03f-4cbd-aa2c-978e8a5cb487"/>
+				<textElement markup="none">
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hospitaldetail_phNum1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="284" y="65" width="83" height="13" uuid="58f5d563-17a0-4167-bd8f-5fa3809edb87"/>
+				<textElement markup="none">
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hospitaldetail_phNum2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="64" width="3" height="13" uuid="6bbec55f-90f7-4262-9de2-e07be72d9cac"/>
+				<text><![CDATA[,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="214" y="64" width="17" height="13" uuid="7994d03e-bf92-4ab0-a253-ab5178e25782"/>
+				<text><![CDATA[Ph.]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="58" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="439" y="26" width="116" height="23" uuid="94553181-4db7-474b-8a04-be617bf8582b"/>
+				<textElement>
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="3" width="555" height="20" uuid="839f251a-63e4-46a2-b171-0804f17c0506"/>
+				<textElement textAlignment="Center">
+					<font fontName="Book Antiqua" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[In-Patient Details]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<rectangle>
+				<reportElement mode="Opaque" x="38" y="7" width="492" height="20" backcolor="#D9D2D2" uuid="f750e72e-4d8a-4baa-9b97-ddb2129f561a"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="47" y="10" width="53" height="16" uuid="0e83efee-210c-42e5-bdf3-8d6fd4fe7be8"/>
+				<textElement textAlignment="Center">
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<text><![CDATA[Pat. MR.No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="235" y="10" width="79" height="16" uuid="76d91fea-7f59-485c-9f9d-da2cfbef1b8c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<text><![CDATA[Room No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="336" y="10" width="72" height="16" uuid="f8eef8d7-aee4-43a7-be66-d8fa06548b1f"/>
+				<textElement textAlignment="Center">
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<text><![CDATA[Bed No]]></text>
+			</staticText>
+			<line>
+				<reportElement x="324" y="7" width="1" height="19" uuid="92054964-0e8d-4db8-953e-7f8cc7832191"/>
+			</line>
+			<line>
+				<reportElement x="105" y="8" width="1" height="19" uuid="0b984dca-4274-4b21-b5d3-6b7a38de36fb"/>
+			</line>
+			<line>
+				<reportElement x="234" y="7" width="1" height="20" uuid="e41de09e-5564-439d-84b5-e02585ebe9c8"/>
+			</line>
+			<staticText>
+				<reportElement x="422" y="9" width="108" height="16" uuid="62c93612-70ac-4184-b854-b9783310d655"/>
+				<textElement textAlignment="Center">
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<text><![CDATA[Addmission Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="11" width="100" height="16" uuid="6587f0ec-64ee-44cd-ba24-ff7557b008df"/>
+				<textElement textAlignment="Center">
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<text><![CDATA[Patient Name]]></text>
+			</staticText>
+			<line>
+				<reportElement x="421" y="8" width="1" height="18" uuid="aadf7d54-a51a-4df4-89c2-2eaac6dd0c5b"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField pattern="###0.00">
+				<reportElement x="336" y="2" width="72" height="15" uuid="def288b2-9287-4cc1-823b-f3da91471896"/>
+				<textElement textAlignment="Center">
+					<font fontName="Book Antiqua" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inpatient_bedno}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="234" y="1" width="1" height="19" uuid="01a808da-c58e-4c1b-b171-0ae396bed43c"/>
+			</line>
+			<line>
+				<reportElement x="324" y="0" width="1" height="20" uuid="5e8518b8-71a3-4409-b93d-06235e50371d"/>
+			</line>
+			<rectangle>
+				<reportElement mode="Transparent" x="38" y="0" width="492" height="20" uuid="4213d49d-15a4-418f-9fae-15cf63a131a2"/>
+			</rectangle>
+			<line>
+				<reportElement x="105" y="0" width="1" height="20" uuid="2dbaa7fb-aa2a-493c-b5e6-ba5d1d330147"/>
+			</line>
+			<textField>
+				<reportElement x="242" y="0" width="72" height="15" uuid="f2099119-012e-43d3-87d0-62034e086e81"/>
+				<textElement textAlignment="Center">
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inpatient_roomno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="49" y="0" width="53" height="15" uuid="8f1932a6-8bdc-46bd-8f26-6a8c43dfde41"/>
+				<textElement>
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inpatient_patientmrno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="445" y="1" width="56" height="15" uuid="2ef9064b-e913-434a-9c4a-69724a4d4e60"/>
+				<textElement>
+					<font fontName="Book Antiqua"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inpatient_admitdateortime}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="421" y="-1" width="1" height="20" uuid="1e24476d-8aa7-47cb-8ec1-91cf80f9b430"/>
+			</line>
+			<textField>
+				<reportElement x="120" y="1" width="114" height="15" uuid="02e6022b-dcd4-4b10-af62-2b587e1d3a84"/>
+				<textElement>
+					<font fontName="Book Antiqua" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{inpatient_patientname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="421" y="34" width="80" height="20" uuid="9eb9395d-3c7e-4345-9878-bab26ebde4ad"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="501" y="34" width="40" height="20" uuid="4a437ca0-8062-45d9-a87e-49769f9a09f4"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

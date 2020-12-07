@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd
+http://www.springframework.org/schema/tx
+http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+	<context:property-placeholder location="classpath:jdbc.properties" />
+	<context:component-scan base-package="com.app" />
+
+	<tx:annotation-driven transaction-manager="hibernateTransactionManager" />
+
+	<bean id="jspViewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/view/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${database.driver}" />
+		<property name="url" value="${database.url}" />
+		<property name="username" value="${database.user}" />
+		<property name="password" value="${database.password}" />
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="annotatedClasses">
+			<list>
+
+
+				<value>com.app.pojo.Product</value>
+				<value>com.app.pojo.Packing</value>
+				<value>com.app.pojo.ProductType</value>
+				<value>com.app.pojo.ProductDetail</value>
+				<value>com.app.pojo.Supplier</value>
+				<value>com.app.pojo.RoomTypePojo</value>
+				<value>com.app.pojo.RoomTarrif</value>
+				<value>com.app.pojo.Floors</value>
+				<value>com.app.pojo.BedTypepojo</value>
+				<value>com.app.pojo.Hospital</value>
+				<value>com.app.pojo.Laboratory</value>
+				<value>com.app.pojo.Pharmacy</value>
+				<value>com.app.pojo.StockPostion</value>
+				<value>com.app.pojo.StockDetails</value>
+				<value>com.app.pojo.DuePatient</value>
+                  <value>com.app.pojo.NewSupplierInfoPojo</value>
+				<value>com.app.pojo.Departmentpojo</value>
+				<value>com.app.pojo.Locationpojo</value>
+				<value>com.app.pojo.MainDepartmentpojo</value>
+				<value>com.app.pojo.Locationpojo1</value>
+				<value>com.app.pojo.Dcotcorpojo</value>
+				<value>com.app.pojo.PatientPojo</value>
+				<value>com.app.pojo.AddPatient1</value>
+
+
+				<value>com.app.pojo.DoctotNames</value>
+				<value>com.app.pojo.InpatientPojo</value>
+				<value>com.app.pojo.OutsideConultPojo</value>
+				<value>com.app.pojo.Mlcpojo</value>
+
+
+				<value>com.app.pojo.entry</value>
+				<value>com.app.pojo.Patientdetail</value>
+				<value>com.app.pojo.Doctordetail</value>
+				<value>com.app.pojo.dept</value>
+				<value>com.app.pojo.Beddata</value>
+
+
+				<value>com.app.pojo.SalesEntryPojo</value>
+				<value>com.app.pojo.ProductType99</value>
+				<value>com.app.pojo.TotalProductSales</value>
+				<value>com.app.pojo.DummyPojo</value>
+				<value>com.app.pojo.SalesEntryReturns</value>
+				<value>com.app.pojo.TotalProductReturns</value>
+				<value>com.app.pojo.PurchaseInvoiceePojo</value>
+				<value>com.app.pojo.SupplierRelatedDetails</value>
+				<value>com.app.pojo.PurchaseInvoicedeails</value>
+				<value>com.app.pojo.PurchaseInvoiceeReturns</value>
+				<value>com.app.pojo.PurchaseInvoiceReturnsdeails</value>
+				
+				
+				
+				<value>com.app.pojo.BedDetails</value>
+				<value>com.app.pojo.RoomPojo</value>
+				<value>com.app.pojo.RoomTotalPojo</value>
+				<value>com.app.pojo.RoomSubTotalPojo</value>
+				
+				<value>com.app.pojo.RegisterPojo</value>
+				
+				
+				<value>com.app.pojo.Employee</value>
+				
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+			</props>
+		</property>
+	</bean>
+
+
+
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+
+		<!-- one of the properties available; the maximum file size in bytes -->
+
+		<property name="maxUploadSize" value="100000000000" />
+	</bean>
+
+
+
+
+	<bean id="hibernateTransactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+</beans>
